@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "project_technologies",
+  "info": {
+    "singularName": "project-technology",
+    "pluralName": "project-technologies",
+    "displayName": "ProjectTechnology",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "technology": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::technology.technology",
+      "inversedBy": "project_technologies"
+    },
+    "project": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::project.project",
+      "inversedBy": "project_technologies"
+    },
+    "choiceDetails": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "note": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "integer",
+      "min": 0,
+      "max": 5,
+      "required": false
+    }
+  }
+}
